@@ -8,7 +8,7 @@
         "description": "The Microsoft Sentinel workspace into which the function will be deployed. Has to be in the selected Resource Group."
       }
     },
-    "Workspace Region": {
+    "WorkspaceRegion": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
       "metadata": {
@@ -32,8 +32,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -52,8 +52,28 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionAppGateSDP",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionAppGateSDP/ASimNetworkSessionAppGateSDP.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -72,8 +92,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -92,8 +112,168 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionCheckPointFirewall",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionCheckPointFirewall/ASimNetworkSessionCheckPointFirewall.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionCiscoASA",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionCiscoASA/ASimNetworkSessionCiscoASA.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionCiscoMeraki",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionCiscoMeraki/ASimNetworkSessionCiscoMeraki.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionCorelightZeek",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionCorelightZeek/ASimNetworkSessionCorelightZeek.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionForcePointFirewall",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionForcePointFirewall/ASimNetworkSessionForcePointFirewall.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionFortinetFortiGate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionFortinetFortiGate/ASimNetworkSessionFortinetFortiGate.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionMD4IoTAgent",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionMD4IoTAgent/ASimNetworkSessionMD4IoTAgent.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionMD4IoTSensor",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionMD4IoTSensor/ASimNetworkSessionMD4IoTSensor.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -112,8 +292,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -132,8 +312,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -141,19 +321,19 @@
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2020-10-01",
-      "name": "linkedASimNetworkSessionMicrosoftMD4IoT",
+      "name": "linkedASimNetworkSessionMicrosoftSysmon",
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionMicrosoftMD4IoT/ASimNetworkSessionMicrosoftMD4IoT.json",
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionMicrosoftSysmon/ASimNetworkSessionMicrosoftSysmon.json",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -172,8 +352,28 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionNative",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionNative/ASimNetworkSessionNative.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -192,8 +392,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -212,8 +412,48 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionVectraAI",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionVectraAI/ASimNetworkSessionVectraAI.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedASimNetworkSessionWatchGuardFirewareOS",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/ASimNetworkSessionWatchGuardFirewareOS/ASimNetworkSessionWatchGuardFirewareOS.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -232,8 +472,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -252,8 +492,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -272,8 +512,28 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionAppGateSDP",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionAppGateSDP/vimNetworkSessionAppGateSDP.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -292,8 +552,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -312,8 +572,88 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionCheckPointFirewall",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionCheckPointFirewall/vimNetworkSessionCheckPointFirewall.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionCiscoASA",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionCiscoASA/vimNetworkSessionCiscoASA.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionCiscoMeraki",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionCiscoMeraki/vimNetworkSessionCiscoMeraki.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionCorelightZeek",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionCorelightZeek/vimNetworkSessionCorelightZeek.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -332,8 +672,88 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionForcePointFirewall",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionForcePointFirewall/vimNetworkSessionForcePointFirewall.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionFortinetFortiGate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionFortinetFortiGate/vimNetworkSessionFortinetFortiGate.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionMD4IoTAgent",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionMD4IoTAgent/vimNetworkSessionMD4IoTAgent.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionMD4IoTSensor",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionMD4IoTSensor/vimNetworkSessionMD4IoTSensor.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -352,8 +772,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -372,28 +792,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
-          }
-        }
-      }
-    },
-    {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2020-10-01",
-      "name": "linkedvimNetworkSessionMicrosoftMD4IoT",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionMicrosoftMD4IoT/vimNetworkSessionMicrosoftMD4IoT.json",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "Workspace": {
-            "value": "[parameters('Workspace')]"
-          },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -412,8 +812,28 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionNative",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionNative/vimNetworkSessionNative.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -432,8 +852,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -452,8 +872,48 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionVectraAI",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionVectraAI/vimNetworkSessionVectraAI.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "linkedvimNetworkSessionWatchGuardFirewareOS",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Parsers/ASimNetworkSession/ARM/vimNetworkSessionWatchGuardFirewareOS/vimNetworkSessionWatchGuardFirewareOS.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "Workspace": {
+            "value": "[parameters('Workspace')]"
+          },
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }
@@ -472,8 +932,8 @@
           "Workspace": {
             "value": "[parameters('Workspace')]"
           },
-          "Workspace Region": {
-            "value": "[parameters('Workspace Region')]"
+          "WorkspaceRegion": {
+            "value": "[parameters('WorkspaceRegion')]"
           }
         }
       }

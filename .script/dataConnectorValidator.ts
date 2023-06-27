@@ -60,9 +60,21 @@ function getConnectorCategory(dataTypes : any, instructionSteps:[])
   {
     return ConnectorCategory.SysLog;
   }
+  else if (dataTypes[0].name.includes("ThreatIntelligenceIndicator"))
+  {
+    return ConnectorCategory.ThreatIntelligenceIndicator;
+  }
+  else if (dataTypes[0].name.includes("MicrosoftPurviewInformationProtection"))
+  {
+    return ConnectorCategory.MicrosoftPurviewInformationProtection;
+  }
   else if (dataTypes[0].name.includes("Event"))
   {
     return ConnectorCategory.Event;
+  }
+  else if (dataTypes[0].name.includes("AzureDevOpsAuditing"))
+  {
+    return ConnectorCategory.AzureDevOpsAuditing;
   }
   else if (dataTypes[0].name.includes("AzureDiagnostics"))
   {
@@ -74,11 +86,15 @@ function getConnectorCategory(dataTypes : any, instructionSteps:[])
     {
         return ConnectorCategory.AzureFunction;
     }
-    else if(dataTypes[0].name.includes("meraki") && JSON.stringify(instructionSteps).includes("\"type\":\"InstallAgent\""))
+    else if((dataTypes[0].name.includes("meraki") || dataTypes[0].name.includes("vCenter")) && JSON.stringify(instructionSteps).includes("\"type\":\"InstallAgent\""))
     {
         return ConnectorCategory.SysLog;
     }
     return ConnectorCategory.RestAPI;
+  }
+  else if (dataTypes[0].name.includes("Dynamics365Activity"))
+  {
+    return ConnectorCategory.Dynamics365Activity;
   }
   return "";
 }
